@@ -16,6 +16,7 @@ junctiond q bank balances $(junctiond keys show $WALLET -a)
 ```
 
 ### management validator
+##### create validator
 Before executing the command `junctiond tx staking create-validator path/to/validator.json --from keyname`, you need to create a `validator.json` file with the following details. Below is an example:
 
 To obtain the pubkey, you can use the command:
@@ -30,7 +31,7 @@ The output will be something like this:
 You'll need to paste the pubkey value into the pubkey section of the JSON file.
 
 {% hint style="info" %}
-** Please adjust the staking amount and other keys as you see fit. **
+ Please adjust the staking amount and other keys as you see fit. 
 {% endhint %}
 ```
 {
@@ -51,7 +52,7 @@ You'll need to paste the pubkey value into the pubkey section of the JSON file.
 junctiond tx staking create-validator path/to/validator.json --from <key-name> --chain-id junction --fees 500amf
 ```
 {% hint style="info" %}
-** A prompt will appear in the CLI. To proceed, type 'y' and press enter. **
+ A prompt will appear in the CLI. To proceed, type 'y' and press enter. 
 {% endhint %}
 It will return Transaction hash Like this
 
@@ -70,5 +71,47 @@ timestamp: ""
 tx: null
 txhash: 3068ED7C9867D9DC926A200363704715AE9470EE73452324A32C2583E62B1D79
 ```
+##### edit validator
+```
+junctiond tx staking edit-validator \
+--commission-rate 0.1 \
+--new-moniker "$MONIKER" \
+--identity "" \
+--details "From MegaNode with love ❤️" \
+--from $WALLET \
+--chain-id junction \
+--fees 200amf \
+-y 
+```
+##### validator info
+```
+junctiond status 2>&1 | jq
+```
+
+##### validator details
+```
+junctiond q staking validator $(junctiond keys show $WALLET --bech val -a) 
+```
+
+##### jail info
+```
+junctiond q slashing signing-info $(junctiond tendermint show-validator) 
+```
+##### unjail validator
+```
+junctiond tx slashing unjail --from $WALLET --chain-id junction --fees 200amf -y 
+```
+### remove node
+
+```
+cd $HOME
+sudo systemctl stop junctiond
+sudo systemctl disable junctiond
+sudo rm /etc/systemd/system/junctiond.service
+sudo systemctl daemon-reload
+sudo rm -f $(which junctiond)
+sudo rm -rf $HOME/.junctiond
+```
+
 
 
