@@ -31,29 +31,3 @@ Security is paramount in the blockchain world, and our framework doesn't take it
 
 #### Smooth Integration with Airchains
 Experience seamless integration as your rollups settle effortlessly on Airchains' settlement chain. This integration is the cornerstone of our framework, ensuring reliability and consistency.
-
-## 🔐ZK Proofs
-Proofs in the context of zk-rollups (zero-knowledge rollups) are a form of cryptographic evidence that validates all transactions in a rollup block without revealing the actual data of those transactions. Here’s a simplified breakdown:
-{% code }
-##### What Are zk-Rollups?
-zk-Rollups are a type of Layer 2 scaling solution for blockchains like Ethereum. They help in scaling by processing transactions off the main chain (Layer 1) while ensuring the security and decentralization of the network.
-{% endcode %}
-
-## Zero-Knowledge Proofs
-
-In blockchain, there are several types of zero-knowledge proofs (ZKPs) which vary in their interaction model and cryptographic techniques:
-
-#### zk-SNARKs
-
-zk-SNARKs are the most well-known ZKP protocol, valued for their quick verification times and minimal proof sizes. Initially, they required a "trusted setup," posing potential security risks, but newer versions have mitigated these concerns with trustless implementations using Multi-Party Computation (MPC).
-#### Bulletproofs
-Introduced as a scalable solution, Bulletproofs' proof sizes increase logarithmically with the number of inputs, improving over linear-sized proofs. They eliminate the need for a trusted setup, enhancing security, although they lack quantum resistance.
-#### zk-STARKs
-The latest in ZKP technology, zk-STARKs offer transparency and quantum resistance, without the need for a trusted setup. They are considered more scalable with simpler assumptions, at the cost of larger proof sizes than zk-SNARKs.
-
-###### Feature | zk-SNARKs	  | Bulletproofs  | zk-STARKs
-
-Trusted Setup|Required (traditional), optional (recent) | Not required| Not required
-|   |   |   |
-|   |   |   |
-|   |   |   |
