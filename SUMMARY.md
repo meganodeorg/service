@@ -5,5 +5,6 @@
   * [Overview](airchains/Overview.md)
   * [Installation](airchains/Install.md)
   * [RPC, API, gRPC and snapshot](airchains/Sync.md)
+  * [Cheat sheet](airchains/Cheatsheet.md)
 
 
