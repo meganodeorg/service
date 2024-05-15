@@ -90,7 +90,7 @@ wget -O $HOME/.junction/config/genesis.json https://github.com/airchains-network
 
 ## configure seeds
 ```
-sed -i -e "s|^seeds *=.*|seeds = \"449297568d9d6d4aa51a93f7a1b1e92e1ec38619@seeds.meganode.org\"|" $HOME/.junction/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"449297568d9d6d4aa51a93f7a1b1e92e1ec38619@65.108.242.9:26656\"|" $HOME/.junction/config/config.toml
 ```
 
 ## config pruning
