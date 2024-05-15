@@ -46,7 +46,7 @@ mkdir -p $HOME/.junction/cosmovisor/genesis/bin
 mv junctiond $HOME/.junction/cosmovisor/genesis/bin/
 ```
 #### create symlinks
-````
+```
 sudo ln -s $HOME/.junction/cosmovisor/genesis $HOME/.junction/cosmovisor/current -f
 sudo ln -s $HOME/.junction/cosmovisor/current/bin/junctiond /usr/local/bin/junctiond -f
 ```
