@@ -1,6 +1,6 @@
 # Welcome to My GitBook on Node Running and Validation
 
-![Banner Image](https://example.com/banner.jpg)
+<!-- ![Banner Image](https://example.com/banner.jpg) -->
 
 ## Introduction
 
@@ -28,14 +28,14 @@ This book is designed for:
 
 ## About the Author
 
-![Author Image](https://example.com/author.jpg)
+<!-- ![Author Image](https://example.com/author.jpg) -->
 
 Hello! I'm [Your Name], a seasoned DevOps engineer with over six years of experience specializing in blockchain technology. My journey has led me to become proficient in running and validating nodes across various blockchain networks. Through this book, I aim to demystify the processes and share practical strategies for success.
 
 ## Stay Connected
 
-- **GitHub**: [https://github.com/pphan79](https://github.com/pphan79)
-- **Twitter**: [@yourhandle](https://twitter.com/prenode_org)
+- **GitHub**: [pphan79](https://github.com/pphan79)
+- **Twitter**: [@prenode_org](https://twitter.com/prenode_org)
 
 ---
 
