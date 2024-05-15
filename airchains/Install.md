@@ -29,7 +29,7 @@ source $HOME/.bashrc
 
 ```
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
-echo "export MONIKER=<Your Moniker>" >> $HOME/.bash_profile
+echo "export MONIKER="meganode"" >> $HOME/.bash_profile
 echo "export CHAIN_ID="junction"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
@@ -79,9 +79,37 @@ WantedBy=multi-user.target
 EOF
 ```
 
-## enable service
+## initialize node
+```
+junctiond init $MONIKER --chain-id $CHAIN_ID 
+```
+## download genesis
+```
+wget -O $HOME/.junction/config/genesis.json https://github.com/airchains-network/junction/releases/download/v0.1.0/genesis.json
+```
+
+## configure seeds
+```
+sed -i -e "s|^seeds *=.*|seeds = \"449297568d9d6d4aa51a93f7a1b1e92e1ec38619@seeds.meganode.org\"|" $HOME/.junction/config/config.toml
+```
+
+## config pruning
+```
+sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.junction/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.junction/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.junction/config/app.toml
+```
+
+## set minimum gas price, enable prometheus and disable indexing
+```
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.001amf"|g' $HOME/.junction/config/app.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.junction/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.junction/config/config.toml
+```
+
+## enable and start service
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable junctiond
+sudo systemctl restart junctiond && sudo journalctl -u junctiond -f
 ```
-
