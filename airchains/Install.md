@@ -20,11 +20,14 @@ wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
 rm "go$VER.linux-amd64.tar.gz"
-[ ! -f ~/.bashrc] && touch ~/.bashrc
-echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bashrc
-source $HOME/.bashrc
+[ ! -f ~/.bash_profile ] && touch ~/.bashrc
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
+source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 ```
+
+
+
 ## set some variables
 
 ```
