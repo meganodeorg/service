@@ -16,7 +16,7 @@
 ```
 
 ### management validator
-##### create validator
+##### #create validator
 ```
 0gchaind tx staking create-validator \
   --amount=1000000ua0gi \
@@ -31,7 +31,7 @@
   --gas=auto \
   --gas-adjustment=1.4
 ```
-##### edit validator
+##### #edit validator
 ```
 0gchaind tx staking edit-validator \
 --commission-rate 0.1 \
@@ -43,21 +43,21 @@
 --fees 200ua0gi \
 -y 
 ```
-##### validator info
+##### #validator info
 ```
 0gchaind status 2>&1 | jq
 ```
 
-##### validator details
+##### #validator details
 ```
 0gchaind q staking validator $(0gchaind keys show $WALLET --bech val -a) 
 ```
 
-##### jail info
+##### #jail info
 ```
 0gchaind q slashing signing-info $(0gchaind tendermint show-validator) 
 ```
-##### unjail validator
+##### #unjail validator
 ```
 0gchaind tx slashing unjail --from $WALLET --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```

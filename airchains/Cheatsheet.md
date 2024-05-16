@@ -16,7 +16,7 @@ junctiond q bank balances $(junctiond keys show $WALLET -a)
 ```
 
 ### management validator
-##### create validator
+##### #create validator
 Before executing the command `junctiond tx staking create-validator path/to/validator.json --from keyname`, you need to create a `validator.json` file with the following details. Below is an example:
 
 To obtain the pubkey, you can use the command:
@@ -71,7 +71,7 @@ timestamp: ""
 tx: null
 txhash: 3068ED7C9867D9DC926A200363704715AE9470EE73452324A32C2583E62B1D79
 ```
-##### edit validator
+##### #edit validator
 ```
 junctiond tx staking edit-validator \
 --commission-rate 0.1 \
@@ -83,21 +83,21 @@ junctiond tx staking edit-validator \
 --fees 200amf \
 -y 
 ```
-##### validator info
+##### #validator info
 ```
 junctiond status 2>&1 | jq
 ```
 
-##### validator details
+##### #validator details
 ```
 junctiond q staking validator $(junctiond keys show $WALLET --bech val -a) 
 ```
 
-##### jail info
+##### #jail info
 ```
 junctiond q slashing signing-info $(junctiond tendermint show-validator) 
 ```
-##### unjail validator
+##### #unjail validator
 ```
 junctiond tx slashing unjail --from $WALLET --chain-id junction --fees 200amf -y 
 ```
