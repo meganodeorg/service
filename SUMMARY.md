@@ -11,5 +11,10 @@
   * [Installation](0g/Install.md)
   * [RPC, API, gRPC and snapshot](0g/Sync.md)
   * [Cheat sheet](0g/Cheatsheet.md)
+* [Initia](initia/README.md)
+  * [Overview](initia/Overview.md)
+  * [Installation](initia/Install.md)
+  * [RPC, API, gRPC and snapshot](initia/Sync.md)
+  * [Cheat sheet](initia/Cheatsheet.md)
 
 
