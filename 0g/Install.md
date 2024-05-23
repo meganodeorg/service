@@ -86,7 +86,7 @@ EOF
 
 ## initialize node
 ```
-junctiond init $MONIKER --chain-id $CHAIN_ID 
+0gchaind init $MONIKER --chain-id $CHAIN_ID 
 ```
 ## download genesis
 ```
