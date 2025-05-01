@@ -34,8 +34,8 @@ Hello! I'm [Your Name], a seasoned DevOps engineer with over six years of experi
 
 ## Stay Connected
 
-- **GitHub**: [pphan79](https://github.com/pphan79)
-- **Twitter**: [@prenode_org](https://twitter.com/prenode_org)
+- **GitHub**: [meganode](https://github.com/meganodeorg)
+- **Twitter**: [@meganode_org](https://twitter.com/meganode_org)
 
 ---
 
